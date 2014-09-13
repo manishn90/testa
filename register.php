@@ -1,8 +1,18 @@
 <html>
 <body>
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your password address is: <?php echo $_POST["password"]; ?>, it is being registered right now.
+
+
+
+<?php
+$name = $_POST["name"];
+$pwd = $_POST["password"];
+
+
+?>
+
+Welcome <?php echo $name ; ?><br>
+Your password address is: <?php echo $pwd ; ?>, it is being registered right now.
 <br><br><br>
 
 
@@ -24,8 +34,14 @@ $con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }else{
-	echo "database found and connected";
+	echo "database found and connected <br><br>";
 
+// Add person into database
+mysqli_query($con,"INSERT INTO user (FirstName, LastName)
+VALUES ($name, $pwd)");
+
+
+// Display all users from database
 	$result = mysqli_query($con,"SELECT * FROM user");
 
 		while($row = mysqli_fetch_array($result)) {
