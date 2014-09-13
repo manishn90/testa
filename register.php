@@ -37,8 +37,7 @@ if (mysqli_connect_errno()) {
 	echo "database found and connected <br><br>";
 
 // Add person into database
-mysqli_query($con,"INSERT INTO user (FirstName, LastName)
-VALUES ($name, $pwd)");
+mysqli_query($con,"INSERT INTO user (name, pwd, signup_date) VALUES ($name, $pwd, now())");
 
 
 // Display all users from database
