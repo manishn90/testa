@@ -4,7 +4,7 @@
 <?php
 
 $name = $_GET["name"];
-$pwd = $_GET["email"];
+$pwd = $_GET["password"];
 
 
 echo $name; 
@@ -26,7 +26,12 @@ if (mysqli_connect_errno()) {
 }else{
 	echo "database found and connected";
 
-	$result = mysqli_query($con,"SELECT * FROM Persons");
+	$result = mysqli_query($con,"SELECT * FROM user");
+
+		while($row = mysqli_fetch_array($result)) {
+		  echo $row['name'] . " " . $row['pwd'] . " " . $row['id'];
+		  echo "<br>";
+		}
 
 	}
 mysqli_close($con);
