@@ -11,7 +11,7 @@ echo $name;
 echo $pwd; 
 
 
-$dbhost = '128.199.156.68';
+$dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = '3zvVfobG39';
 $dbname = 'testbase';
