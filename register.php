@@ -1,17 +1,15 @@
 <html>
 <body>
 
+Welcome <?php echo $_POST["name"]; ?><br>
+Your password address is: <?php echo $_POST["password"]; ?>, it is being registered right now.
+<br><br><br>
+
+
+
+
 <?php
 
-$name = $_GET["name"];
-$pwd = $_GET["password"];
-
-
-echo "Welcome "  $_POST["name"]; 
-echo "Your email password is: "  $_POST["password"]
-
-
-/*
 
 $dbhost = 'localhost';
 $dbuser = 'root';
@@ -37,7 +35,7 @@ if (mysqli_connect_errno()) {
 
 	}
 mysqli_close($con);
-*/
+
 
 
 ?>
