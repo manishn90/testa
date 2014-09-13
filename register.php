@@ -7,9 +7,11 @@ $name = $_GET["name"];
 $pwd = $_GET["password"];
 
 
-echo $name; 
-echo $pwd; 
+echo "Welcome "  $_POST["name"]; 
+echo "Your email password is: "  $_POST["password"]
 
+
+/*
 
 $dbhost = 'localhost';
 $dbuser = 'root';
@@ -35,6 +37,8 @@ if (mysqli_connect_errno()) {
 
 	}
 mysqli_close($con);
+*/
+
 
 ?>
 
